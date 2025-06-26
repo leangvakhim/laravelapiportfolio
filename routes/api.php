@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ImageController;
@@ -17,7 +18,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::middleware('api')->group(function(){
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
+Route::middleware(['api', 'auth:api'])->group(function(){
     Route::controller(ImageController::class)->prefix('image')->group(function(){
         Route::get('/', 'index');
         Route::get('/{id}', 'show');
@@ -99,3 +101,4 @@ Route::middleware('api')->group(function(){
         Route::post('/visible', 'visible');
     });
 });
+
