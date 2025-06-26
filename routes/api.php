@@ -19,6 +19,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
+Route::post('/logout', [AuthController::class, 'logout']);
+
+Route::middleware('auth:api')->get('/check-auth', function () {
+    return response()->json(['ok' => true]);
+});
 Route::middleware(['api', 'auth:api'])->group(function(){
     Route::controller(ImageController::class)->prefix('image')->group(function(){
         Route::get('/', 'index');
