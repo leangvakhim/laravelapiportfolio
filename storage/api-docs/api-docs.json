@@ -1,0 +1,1645 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My Portfolio API",
+        "description": "This is the Swagger UI documentation for my Laravel API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/achievement": {
+            "get": {
+                "tags": [
+                    "Achievement"
+                ],
+                "summary": "Get all achievements",
+                "operationId": "4585a8172851bcccd324959ecae2de0f",
+                "responses": {
+                    "200": {
+                        "description": "List of achievements"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Achievement"
+                ],
+                "summary": "Create a new achievement",
+                "operationId": "29d9f6d06575067311ef8fa93030b83c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "a_img",
+                                    "a_type",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "a_img": {
+                                        "type": "integer"
+                                    },
+                                    "a_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Achievement created successfully"
+                    }
+                }
+            }
+        },
+        "/api/achievement/{id}": {
+            "get": {
+                "tags": [
+                    "Achievement"
+                ],
+                "summary": "Get an achievement by ID",
+                "operationId": "7b53280b429b0d2cfc02d9467caa75ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Achievement retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Achievement not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Achievement"
+                ],
+                "summary": "Delete an achievement by ID",
+                "operationId": "e5d64d9c36135e0ed5945306e9265167",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete achievement successfully"
+                    },
+                    "404": {
+                        "description": "Achievement not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Achievement"
+                ],
+                "summary": "Update a achievement by ID",
+                "operationId": "be578bb5fabfe71fc80c5fefd86ae20d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "a_img": {
+                                        "type": "integer"
+                                    },
+                                    "a_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Achievement updated successfully"
+                    },
+                    "404": {
+                        "description": "Achievement not found"
+                    }
+                }
+            }
+        },
+        "/api/blog": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Get all blog",
+                "operationId": "ea1c9e4eb5fdd360cfe59cdefce55814",
+                "responses": {
+                    "200": {
+                        "description": "List of blog"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Create a new blog",
+                "operationId": "1605fee407ba78ac717c1c883b630c17",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "b_title",
+                                    "b_subtitle",
+                                    "b_detail",
+                                    "b_img",
+                                    "b_date",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "b_img": {
+                                        "type": "integer"
+                                    },
+                                    "b_title": {
+                                        "type": "string"
+                                    },
+                                    "b_subtitle": {
+                                        "type": "string"
+                                    },
+                                    "b_date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "b_detail": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Blog created successfully"
+                    }
+                }
+            }
+        },
+        "/api/blog/{id}": {
+            "get": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Get an blog by ID",
+                "operationId": "6ac9d2eb1f1ccbc64de4ae3a2bb02941",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Blog retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Blog not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Update a blog by ID",
+                "operationId": "ebfc9751cbe46ca77c6c6f33efabc7ae",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "b_img": {
+                                        "type": "integer"
+                                    },
+                                    "b_title": {
+                                        "type": "string"
+                                    },
+                                    "b_subtitle": {
+                                        "type": "string"
+                                    },
+                                    "b_detail": {
+                                        "type": "string"
+                                    },
+                                    "b_date": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Blog updated successfully"
+                    },
+                    "404": {
+                        "description": "Blog not found"
+                    }
+                }
+            }
+        },
+        "/api/blog/visible/{id}": {
+            "put": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Delete an blog by ID",
+                "operationId": "b73fcda3b8f8896c9d41de228bd7b626",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete blog successfully"
+                    },
+                    "404": {
+                        "description": "Blog not found"
+                    }
+                }
+            }
+        },
+        "/api/blog/reorder": {
+            "put": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Reorder blogs",
+                "operationId": "06fd10c1d8fb3fa2a0e37939435b5cae",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "b_id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "b_order": {
+                                            "type": "integer",
+                                            "example": 2
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Blog order updated successfully"
+                    }
+                }
+            }
+        },
+        "/api/email": {
+            "get": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Get all email",
+                "operationId": "a57c0548759e1cbfbce8535264c482cf",
+                "responses": {
+                    "200": {
+                        "description": "List of email"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Create a new email",
+                "operationId": "4762c1fa04d56775beeb406d7ccc4474",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "e_name",
+                                    "e_email",
+                                    "e_detail"
+                                ],
+                                "properties": {
+                                    "e_name": {
+                                        "type": "string"
+                                    },
+                                    "e_email": {
+                                        "type": "string"
+                                    },
+                                    "e_detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Email created successfully"
+                    }
+                }
+            }
+        },
+        "/api/email/{id}": {
+            "get": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Get an email by ID",
+                "operationId": "794339f893ce38c1debd585f866bfe58",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Email retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Email not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Delete an email by ID",
+                "operationId": "09ea22844983b563327d5b9c988068c4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete email successfully"
+                    },
+                    "404": {
+                        "description": "Email not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Email"
+                ],
+                "summary": "Update a email by ID",
+                "operationId": "499b7097419e018614e10e65445e00e4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "e_name": {
+                                        "type": "string"
+                                    },
+                                    "e_email": {
+                                        "type": "string"
+                                    },
+                                    "e_detail": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Email updated successfully"
+                    },
+                    "404": {
+                        "description": "Email not found"
+                    }
+                }
+            }
+        },
+        "/api/image": {
+            "get": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Get all images",
+                "operationId": "1635eef9b114be63a3ac64e90831a3ae",
+                "responses": {
+                    "200": {
+                        "description": "List of all images"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "upload a new images",
+                "operationId": "1df06bb2db0319e20582f119b51b6eb3",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "img[]": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Images uploaded"
+                    },
+                    "422": {
+                        "description": "Validation failed"
+                    }
+                }
+            }
+        },
+        "/api/image/{id}": {
+            "get": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Get image by ID",
+                "operationId": "4bba6f24ab0edb74e9fa3c4aa1b78996",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Image found"
+                    },
+                    "404": {
+                        "description": "Image not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Images"
+                ],
+                "summary": "Delete an image by ID",
+                "operationId": "ac560551c46b802a357cd0f01325efb4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Image delete successfully"
+                    },
+                    "404": {
+                        "description": "Image not found"
+                    }
+                }
+            }
+        },
+        "/api/information": {
+            "get": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "Get all information",
+                "operationId": "454b7f1fd588b5830ed076faa92816d2",
+                "responses": {
+                    "200": {
+                        "description": "List of information"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "Create a new information",
+                "operationId": "3c90d1e04ca28d976112959f946a04b5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "i_img",
+                                    "i_title",
+                                    "i_detail",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "i_img": {
+                                        "type": "integer"
+                                    },
+                                    "i_title": {
+                                        "type": "string"
+                                    },
+                                    "i_detail": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Information created successfully"
+                    }
+                }
+            }
+        },
+        "/api/information/{id}": {
+            "get": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "Get an information by ID",
+                "operationId": "17bb7a08fe95ca3122ffbc1e55e566ad",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Information retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Information not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "Delete an information by ID",
+                "operationId": "a6302c01324905a076e34df1c0c1aef7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete information successfully"
+                    },
+                    "404": {
+                        "description": "Information not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Information"
+                ],
+                "summary": "Update a information by ID",
+                "operationId": "65b91550c36aef633cfe070a8d865585",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "i_img": {
+                                        "type": "integer"
+                                    },
+                                    "i_title": {
+                                        "type": "string"
+                                    },
+                                    "i_detail": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Information updated successfully"
+                    },
+                    "404": {
+                        "description": "Information not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolio": {
+            "get": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Get all portfolio",
+                "operationId": "5845d8d04917a76915a777d8c988566f",
+                "responses": {
+                    "200": {
+                        "description": "List of portfolio"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Create a new portfolio",
+                "operationId": "6240b775a71c2be391a2b9d0d3ed5ca7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "p_title",
+                                    "p_category",
+                                    "p_img",
+                                    "p_detail",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "p_img": {
+                                        "type": "integer"
+                                    },
+                                    "p_title": {
+                                        "type": "string"
+                                    },
+                                    "p_category": {
+                                        "type": "string"
+                                    },
+                                    "p_detail": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Portfolio created successfully"
+                    }
+                }
+            }
+        },
+        "/api/portfolio/{id}": {
+            "get": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Get an portfolio by ID",
+                "operationId": "eee3f303f0feef0fd119a697a4033503",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Portfolio retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Portfolio not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Update a portfolio by ID",
+                "operationId": "d1ce9341849cacbeabb4aa4aa44ecfe9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "p_img": {
+                                        "type": "integer"
+                                    },
+                                    "p_title": {
+                                        "type": "string"
+                                    },
+                                    "p_category": {
+                                        "type": "string"
+                                    },
+                                    "p_detail": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Portfolio updated successfully"
+                    },
+                    "404": {
+                        "description": "Portfolio not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolio/visible/{id}": {
+            "put": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Delete an portfolio by ID",
+                "operationId": "917b2f8d40cfc048c36dc8a7b7c14683",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete portfolio successfully"
+                    },
+                    "404": {
+                        "description": "Portfolio not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolio/reorder": {
+            "put": {
+                "tags": [
+                    "Portfolio"
+                ],
+                "summary": "Reorder portfolios",
+                "operationId": "ab359e4f78cb14987e4d5b18ccb45d30",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "p_id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "p_order": {
+                                            "type": "integer",
+                                            "example": 2
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Portfolio order updated successfully"
+                    }
+                }
+            }
+        },
+        "/api/resume": {
+            "get": {
+                "tags": [
+                    "Resume"
+                ],
+                "summary": "Get all resume",
+                "operationId": "3158d99e284e5adb311f4ab223a02a06",
+                "responses": {
+                    "200": {
+                        "description": "List of resume"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Resume"
+                ],
+                "summary": "Create a new resume",
+                "operationId": "983f2847a8ef3c99fc364e28bc082272",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "r_title",
+                                    "r_duration",
+                                    "r_detail",
+                                    "r_type",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "r_title": {
+                                        "type": "string"
+                                    },
+                                    "r_duration": {
+                                        "type": "string"
+                                    },
+                                    "r_detail": {
+                                        "type": "string"
+                                    },
+                                    "r_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resume created successfully"
+                    }
+                }
+            }
+        },
+        "/api/resume/{id}": {
+            "get": {
+                "tags": [
+                    "Resume"
+                ],
+                "summary": "Get an resume by ID",
+                "operationId": "45ba7a286ca178ac86b6665f844a5165",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resume retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Resume not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Resume"
+                ],
+                "summary": "Delete an resume by ID",
+                "operationId": "5e367452200f5c9eee9567296cb33537",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete resume successfully"
+                    },
+                    "404": {
+                        "description": "Resume not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Resume"
+                ],
+                "summary": "Update a resume by ID",
+                "operationId": "3b5e9ee08d1d39c576231fb77e885f0e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "r_title": {
+                                        "type": "string"
+                                    },
+                                    "r_duration": {
+                                        "type": "string"
+                                    },
+                                    "r_detail": {
+                                        "type": "string"
+                                    },
+                                    "r_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Resume updated successfully"
+                    },
+                    "404": {
+                        "description": "Resume not found"
+                    }
+                }
+            }
+        },
+        "/api/skill": {
+            "get": {
+                "tags": [
+                    "Skill"
+                ],
+                "summary": "Get all skill",
+                "operationId": "f3f4b453d14918cd314f9b1c29e5d9d3",
+                "responses": {
+                    "200": {
+                        "description": "List of skill"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Skill"
+                ],
+                "summary": "Create a new skill",
+                "operationId": "bf06b49c80496bf5f94c5a8ae62b6b02",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "sk_title",
+                                    "sk_per",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "sk_title": {
+                                        "type": "string"
+                                    },
+                                    "sk_per": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Skill created successfully"
+                    }
+                }
+            }
+        },
+        "/api/skill/{id}": {
+            "get": {
+                "tags": [
+                    "Skill"
+                ],
+                "summary": "Get an skill by ID",
+                "operationId": "e572ace3eed3334d7eb078d953970e1a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Skill retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Skill not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Skill"
+                ],
+                "summary": "Delete an skill by ID",
+                "operationId": "106042aec674f97ea3e951d012e68e4e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete skill successfully"
+                    },
+                    "404": {
+                        "description": "Skill not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Skill"
+                ],
+                "summary": "Update a skill by ID",
+                "operationId": "91bdee184f9c43b8b04fa472cc773f50",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "sk_title": {
+                                        "type": "string"
+                                    },
+                                    "sk_per": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Skill updated successfully"
+                    },
+                    "404": {
+                        "description": "Skill not found"
+                    }
+                }
+            }
+        },
+        "/api/social": {
+            "get": {
+                "tags": [
+                    "Social"
+                ],
+                "summary": "Get all social",
+                "operationId": "b41415bd1d9fac5aebdc656456f948dd",
+                "responses": {
+                    "200": {
+                        "description": "List of social"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Social"
+                ],
+                "summary": "Create a new social",
+                "operationId": "ec65200a160f84e763419e7f07d91883",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "s_img",
+                                    "s_title",
+                                    "s_link",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "s_img": {
+                                        "type": "integer"
+                                    },
+                                    "s_title": {
+                                        "type": "string"
+                                    },
+                                    "s_link": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Social created successfully"
+                    }
+                }
+            }
+        },
+        "/api/social/{id}": {
+            "get": {
+                "tags": [
+                    "Social"
+                ],
+                "summary": "Get an social by ID",
+                "operationId": "1a08ef667a0e8908c634027e5af00b92",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Social retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Social not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Social"
+                ],
+                "summary": "Delete an social by ID",
+                "operationId": "8645405a1b0a4f008a0180e9a7209e16",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete social successfully"
+                    },
+                    "404": {
+                        "description": "Social not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Social"
+                ],
+                "summary": "Update a social by ID",
+                "operationId": "08fbea25d093404e660df4fd7fd0361d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "s_img": {
+                                        "type": "integer"
+                                    },
+                                    "s_title": {
+                                        "type": "string"
+                                    },
+                                    "s_link": {
+                                        "type": "string"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Social updated successfully"
+                    },
+                    "404": {
+                        "description": "Social not found"
+                    }
+                }
+            }
+        },
+        "/api/text": {
+            "get": {
+                "tags": [
+                    "Text"
+                ],
+                "summary": "Get all text",
+                "operationId": "510660bc69a2531e75afe731e7bc7579",
+                "responses": {
+                    "200": {
+                        "description": "List of text"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Text"
+                ],
+                "summary": "Create a new text",
+                "operationId": "3ef275b33da99a94cf7d66628d8ce8c3",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "t_detail",
+                                    "t_type",
+                                    "display"
+                                ],
+                                "properties": {
+                                    "t_detail": {
+                                        "type": "string"
+                                    },
+                                    "t_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Text created successfully"
+                    }
+                }
+            }
+        },
+        "/api/text/{id}": {
+            "get": {
+                "tags": [
+                    "Text"
+                ],
+                "summary": "Get an text by ID",
+                "operationId": "298b61dd3f876b4448b506d013499948",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Text retrieved successfully"
+                    },
+                    "404": {
+                        "description": "Text not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Text"
+                ],
+                "summary": "Delete an text by ID",
+                "operationId": "3d1e80bd2127fbe72e6b9159f89f9b80",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete text successfully"
+                    },
+                    "404": {
+                        "description": "Text not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Text"
+                ],
+                "summary": "Update a text by ID",
+                "operationId": "e82e01a1e087e3040470e9b013cb461c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "t_detail": {
+                                        "type": "string"
+                                    },
+                                    "t_type": {
+                                        "type": "integer"
+                                    },
+                                    "display": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Text updated successfully"
+                    },
+                    "404": {
+                        "description": "Text not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Achievement",
+            "description": "Achievement"
+        },
+        {
+            "name": "Blog",
+            "description": "Blog"
+        },
+        {
+            "name": "Email",
+            "description": "Email"
+        },
+        {
+            "name": "Images",
+            "description": "Images"
+        },
+        {
+            "name": "Information",
+            "description": "Information"
+        },
+        {
+            "name": "Portfolio",
+            "description": "Portfolio"
+        },
+        {
+            "name": "Resume",
+            "description": "Resume"
+        },
+        {
+            "name": "Skill",
+            "description": "Skill"
+        },
+        {
+            "name": "Social",
+            "description": "Social"
+        },
+        {
+            "name": "Text",
+            "description": "Text"
+        }
+    ]
+}
