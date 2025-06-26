@@ -33,7 +33,10 @@ jobs:
           php-version: 8.2
 
       - name: Install Composer dependencies (including dev)
-        run: composer install --prefer-dist --no-progress --no-suggest --dev
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Install PHPUnit (if missing)
+        run: composer require --dev phpunit/phpunit --with-all-dependencies
 
       - name: Copy .env.testing to .env
         run: cp .env.testing .env
