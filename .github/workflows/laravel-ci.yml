@@ -69,9 +69,12 @@ jobs:
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
+            php artisan config:clear
             php artisan cache:clear
             php artisan route:cache
+            php artisan route:clear
             php artisan view:cache
+            php artisan optimize:clear
             sudo chmod -R 775 storage
             sudo chmod -R 775 bootstrap/cache
             sudo chown -R www-data:www-data storage
