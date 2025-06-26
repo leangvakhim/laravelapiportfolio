@@ -65,7 +65,7 @@ jobs:
             cd /var/www/laravelapi
             git config --global --add safe.directory /var/www/laravelapi
             sudo chown -R $USER:$USER /var/www/laravelapi
-            git pull origin master
+            git pull origin main
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
