@@ -18,7 +18,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:15,1');
 Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth:api')->get('/check-auth', function () {
