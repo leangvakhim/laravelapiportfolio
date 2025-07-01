@@ -18,13 +18,11 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:15,1');
-Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth:api')->get('/check-auth', function () {
     return response()->json(['ok' => true]);
 });
-Route::middleware(['api', 'auth:api'])->group(function(){
+Route::middleware(['auth:api'])->group(function () {
     Route::controller(ImageController::class)->prefix('image')->group(function(){
         Route::get('/', 'index');
         Route::get('/{id}', 'show');
@@ -107,3 +105,6 @@ Route::middleware(['api', 'auth:api'])->group(function(){
     });
 });
 
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:15,1');
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/guest', [AuthController::class, 'guestAccess'])->middleware('throttle:15,1');;

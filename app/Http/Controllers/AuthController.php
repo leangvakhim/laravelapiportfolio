@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
@@ -65,5 +66,21 @@ class AuthController extends Controller
                 ]
             ]);
         }
+    }
+
+    public function guestAccess()
+    {
+        $guestUser = User::where('name', 'guest')->first();
+
+        if (!$guestUser) {
+            // Log::warning('Guest user not found in database');
+            return response()->json(['error' => 'Guest user not found'], 404);
+        }
+
+        // Log::info('Guest user found, generating token for user ID: ' . $guestUser->id);
+        $guest_token = auth('api')->login($guestUser);
+        // Log::info('Token generated successfully for guest user');
+
+        return response()->json(['guest_token' => $guest_token]);
     }
 }
